@@ -1,23 +1,37 @@
 # ScanTCP
-This project aims to develop a basic tool to identify open ports on remote hosts.
+This project is a TCP port scanner tool with a graphical interface, developed in Python using the pygame library. It allows scanning a range of ports on an IP or host and displaying the results interactively.
 
 ## Project structure
 ```
 📁 tcp-port-scanner
+├── main.py
 ├── scanner_gui.py
 ├── 📁 scanner
 │   └── tcp_scanner.py
 ├── requirements.txt
 └── README.md
 ```
+
 ## Features
-- Accepts a host (IP or domain).
-- Scans a range of TCP ports (e.g., 1 to 100).
-- Attempts to connect to each port.
-- Displays whether the port is open or closed.
+1. Data Input:
+    - The user can enter the host (IP or domain name).
+    - The user can set the start port and end port for the scan.
+
+2. Port Scanning:
+    - When clicking the "Scan" button, the program scans the ports in the defined range.
+    - The program shows the scan result: whether there are open ports or if no open ports were found.
+
+3. Results:
+    - The scan result is displayed on the screen, showing the open ports.
+    - If no open ports are found, a message is displayed informing the user of that.
+
+4. Graphical Interface:
+    - The project uses the pygame library to create a simple and interactive graphical interface.
 
 ## Tecnologies used
 - Python
+- Pygame
+- Sockets (TCP network)
 
 ## How to run the project
 
@@ -35,13 +49,25 @@ cd tcp-port-scanner
 ```bash
 pip install -r requirements.txt
 ```
+or
+```bash
+py -m pip install -r requirements.txt
+```
 4. Run the file 
 ```bash
-python tcp_scanner.py
+python main.py
 ```
-5. Fill in the Host/IP, Starting Port, and Ending Port fields.
-6. Click the "Scan" button to start scanning.
-7. The results will appear at the bottom of the screen, showing the open ports.
+or
+```bash
+py main.py
+```
+
+## How does it work?
+1. In the Host/IP field, enter the IP or domain you want to scan (e.g., 127.0.0.1 or google.com).
+2. In the Start Port field, enter the number of the first port you want to test (e.g., 20).
+3. In the End Port field, enter the number of the last port you want to test (e.g., 80).
+4. Click the "Scan" button to start the scan.
+5. The scan results will be displayed below the filled fields, showing whether or not there are open ports.
 
 ## Educational purpose
 This project is intended for educational purposes. It was developed as a practical exercise for learning the fundamentals of networking, Python programming, and basic techniques of footprinting and vulnerability analysis.
